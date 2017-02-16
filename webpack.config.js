@@ -1,5 +1,4 @@
-//var nodeExternals = require('webpack-node-externals');
-process.env.NODE_ENV = 'production';
+//process.env.NODE_ENV = 'production';
 
 module.exports = {
     entry: getEntry(),
@@ -51,26 +50,7 @@ function getEntry() {
   }
 
   entry.push('./app/index.tsx');
+  entry.push('./styles/style.less');
   return entry;
 };
 
-
-/*
-externals: [
-        nodeExternals(),
-        {
-            "react": {
-                root: 'react',
-                commonjs2: 'react',
-                commonjs: 'react',
-                amd: 'react'
-            },
-            "react-dom": {
-                root:'react-dom',
-                commonjs2: 'react-dom',
-                commonjs: 'react-dom',
-                amd:'react-dom'
-            }
-        }
-    ]
-    */

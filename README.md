@@ -1,11 +1,9 @@
 # ReactTemplate
 Template to create react application with Typescipt + Babel + WebPack + Hot Loader.
 
-Run below command on command windows to init type script typedefinition first.
+Run below command on command windows to install all modules.
 
-`tsd init `
-
-`tsd install react react-dom --save`
+`npm install `
 
 ## Development
 comment out following line from `webpack.config.js`

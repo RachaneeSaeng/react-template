@@ -7,7 +7,6 @@
   },
   "files": [
     "app/index.tsx",
-    "app/components/App.tsx", 
-    "typings/tsd.d.ts"
+    "app/components/App.tsx"
   ]
 }
