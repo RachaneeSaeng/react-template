@@ -22,7 +22,6 @@ module.exports = {
                 loaders: [
                     'style',
                     'css',
-                    'autoprefixer?browsers=last 3 versions',
                     'less'
                 ]
             },
@@ -30,7 +29,8 @@ module.exports = {
                 test: /\.tsx?$/,
                 exclude: /(node_modules)/,
                 loaders: [
-                    'babel',                  
+                    'react-hot',
+                    'babel?presets[]=es2015',                  
                     'ts-loader'
                 ]
             }

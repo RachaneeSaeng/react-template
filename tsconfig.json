@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "es6",
-    "sourceMap": true,
-    "jsx": "react"
+    "target": "es6", // we compile to ES6
+    "module": "es6", // this is not really needed, es6 modules are the default for es6 target
+    "sourceMap": true, // create sourceMaps
+    "jsx": "react"  // needed for JSX support
   },
+  // if files list is empty, then all files are included. 
+  // If we list files, only those files are included.
   "files": [
     "app/index.tsx",
     "app/components/App.tsx"
