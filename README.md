@@ -21,5 +21,8 @@ uncomment following line from `webpack.config.js`
 
 `process.env.NODE_ENV = 'production';`
 
-Then run `webpack -p` in command prompt at the project folder.
+Then command prompt at the project folder 
+
+1. Run command `webpack -p` to minify and bundle modules
+
 
