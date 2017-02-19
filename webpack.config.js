@@ -1,4 +1,5 @@
-//process.env.NODE_ENV = 'production';
+process.env.NODE_ENV = 'production'
+var webpack = require('webpack')
 
 module.exports = {
     entry: getEntry(),
@@ -6,7 +7,20 @@ module.exports = {
         publicPath: 'http://localhost:8080/',
         filename: 'dist/bundle.js'
     },
-    devtool: "source-map",
+    devtool: "eval",
+    plugins: process.env.NODE_ENV === 'production' ? 
+            [
+                new webpack.DefinePlugin({
+                    'process.env': {
+                        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+                    },
+                }),
+                new webpack.optimize.UglifyJsPlugin()
+            ] :
+            [],
+    resolve: {
+        extensions: ["", ".webpack.js", ".web.js", ".js", ".ts", ".tsx"]
+    },
     module: {
         preLoaders: [
             {
@@ -30,15 +44,19 @@ module.exports = {
                 exclude: /(node_modules)/,
                 loaders: [
                     'react-hot',
-                    'babel?presets[]=es2015',                  
+                    'babel?presets[]=env',                  
                     'ts-loader'
+                ]
+            },
+            {
+                test: /\.js?$/,
+                exclude: /(node_modules)/,
+                loaders: [
+                    'babel?presets[]=env', 
                 ]
             }
         ]
-    },
-    resolve: {
-        extensions: ["", ".webpack.js", ".web.js", ".js", ".ts", ".tsx"]
-    }
+    }    
 };
 
 function getEntry() {
@@ -53,4 +71,3 @@ function getEntry() {
   entry.push('./styles/style.less');
   return entry;
 };
-
