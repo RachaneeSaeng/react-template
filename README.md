@@ -10,12 +10,14 @@ comment out following line from `webpack.config.js`
 
 `process.env.NODE_ENV = 'production';`
 
-Then run `npm start` in command window at the project folder.
+Then command prompt at the project folder 
+1. Run command `webpack` to bundle modules
+2. Run command  `npm start` to start webpack dev server with hot loader.
 
 ## Production
 uncomment following line from `webpack.config.js`
 
 `process.env.NODE_ENV = 'production';`
 
-Then run `webpack -p` in command window at the project folder.
+Then run `webpack -p` in command prompt at the project folder.
 
